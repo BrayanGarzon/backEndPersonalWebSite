@@ -19,12 +19,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", 'False')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', ["http://0.0.0.0:8000/", '*'])
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS', ["http://0.0.0.0:8000/", '*']).split(' ')
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8080',
-)
+
 
 # Application definition
 
